@@ -7,7 +7,7 @@ exports.config = {
     //
     port: 4723,
     specs: [
-        './test/specs/**/*.js'
+        './test/specs/android/*.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -16,11 +16,11 @@ exports.config = {
     maxInstances: 10,
     capabilities: [{
         platformName: "Android",
-        "appium:platformVersion": "11.0",
-        "appium:deviceName": "Pixel 2",
+        "appium:platformVersion": "13.0",
+        "appium:deviceName": "Pixel 5",
         "appium:automationName": "UIAutomator2",
-        "appium:app": path.join(process.cwd(), "./app/andriod/ApiDemos-debug.apk")
-
+        "appium:app": path.join(process.cwd(), "./app/andriod/ColorNote_Notepad.apk"),
+        "appium:autoGrantPermissions": true
     }],
     logLevel: 'info',
     bail: 0,
@@ -31,7 +31,7 @@ exports.config = {
     connectionRetryTimeout: 120000,
     //
     // Default request retries count
-    connectionRetryCount: 3,
+    connectionRetryCount: 1,
     services: [['appium', {
         args: {
             address: 'localhost',
