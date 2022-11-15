@@ -19,7 +19,7 @@ exports.config = {
         "appium:platformVersion": "13.0",
         "appium:deviceName": "Pixel 5",
         "appium:automationName": "UIAutomator2",
-        "appium:app": path.join(process.cwd(), "./app/andriod/ColorNote_Notepad.apk"),
+        "appium:app": path.join(process.cwd(), "./app/andriod/ColorNote+Notepad.apk"),
         "appium:autoGrantPermissions": true
     }],
     logLevel: 'info',
