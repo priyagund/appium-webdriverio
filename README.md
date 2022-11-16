@@ -160,7 +160,56 @@ v. run test by using below command
 Note : make sure that emulator is in running state.
 
 
-
-
-
 ````
+
+# How to configure browser stack
+
+1. create browser stack account and upload app.
+
+2. config browser stack with below steps.
+
+```
+  i. install broweser stack service with -- npm install @wdio/browserstack-service --save-dev
+```
+
+```
+ii.add config file as below
+```
+
+```config.specs = [
+   './test/specs/android/*.js'
+]
+connectionRetryTimeout: 100000
+config.capabilities = [{
+   platformName: "Android",
+   "appium:platformVersion": "10.0",
+   "appium:deviceName": "Google Pixel 3",
+   "appium:automationName": "UIAutomator2",
+   "appium:app": "bs://479f319e7ce5296221bdb85e18eefbc4e661947b",
+   "appium:autoGrantPermissions": true
+}]
+
+config.services = ['browserstack'];
+exports.config = config;
+```
+
+```
+iii. run test using below command
+```
+
+```
+npx wdio config/wdio-android-bs-config.js
+```
+
+```
+iv. you can see the test got passed with browse stack by clicking on App Automate tab
+
+```
+
+error:
+
+webdriver: RequestError: connect ETIMEDOUT 103.126.7.240:4723 when running "https://hub-cloud.browserstack.com:4723/wd/hub/session"
+
+Solution:
+
+remove port from config file.

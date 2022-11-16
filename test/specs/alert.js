@@ -1,8 +1,8 @@
-const { AppiumDriver } = require("appium/build/lib/appium")
+//const { AppiumDriver } = require("appium/build/lib/appium")
 
 describe('Accept Alert', () => {
 
-    it.skip("Working with dialog boxes", async () => {
+    it("Working with dialog boxes", async () => {
         //access activity
         await driver.stratActivity("io.appium.android.apis", "io.appium.android.apis.app.AlertDialogSamples");
 
@@ -33,13 +33,13 @@ describe('Accept Alert', () => {
 
     })
 
-    it("Horizontal scrolling", async () => {
+    it.skip("Horizontal scrolling", async () => {
         await driver.startActivity("io.appium.android.apis", "io.appium.android.apis.view.Gallery1")
         await $('android=new UiScrollable(new UiSelector().scrollable(true)).setAsHorizontalList().scrollForword()')
-        await deriver.pause(3000)
+        //await deriver.pause(3000)
     })
 
-    it.only('working with date picker', async () => {
+    it.skip('working with date picker', async () => {
         await driver.startActivity("io.appium.android.apis", "io.appium.android.apis.view.DateWidgets1")
         const date = await $('//*[@resource-id="io.appium.android.apis:id/dateDisplay"]')
         console.log("current date is" + date)

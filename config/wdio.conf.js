@@ -5,7 +5,6 @@ exports.config = {
     // Runner Configuration
     // ====================
     //
-    port: 4723,
     specs: [
         './test/specs/android/*.js'
     ],

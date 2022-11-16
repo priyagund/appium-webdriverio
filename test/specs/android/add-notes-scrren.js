@@ -1,7 +1,6 @@
-const { AppiumDriver } = require("appium/build/lib/appium")
 const AddNoteScreen = require("../../scrrenobject/android/add-note-screen")
 
-describe('Add Notes', () => {
+describe.skip('Add Notes', () => {
     it('Skip tutorial and add notes', async () => {
         await driver.pause(3000)
         await AddNoteScreen.skipBtn.click()

@@ -1,6 +1,5 @@
-const { AppiumDriver } = require("appium/build/lib/appium")
 
-describe('Android Element Test', () => {
+describe.skip('Android Element Test', () => {
 
     it('Find element by accessibility Id', async () => {
         // find element by accessibility
